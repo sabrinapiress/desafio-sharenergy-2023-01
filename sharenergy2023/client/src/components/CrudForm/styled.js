@@ -2,7 +2,7 @@ const { makeStyles } = require("@material-ui/core");
 
 export const useStyles = makeStyles((theme) => ({
     paper: {
-        marginTop: theme.spacing(8),
+        marginTop: theme.spacing(2),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -11,16 +11,11 @@ export const useStyles = makeStyles((theme) => ({
     title: {
         fontSize: 25,
         marginBottom: 10,
+        marginTop: 10
     },
     root: {
         display: 'flex',
         flexWrap: 'wrap',
-    },
-    componetDiv:{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center'
     },
     textField: {
         marginLeft: theme.spacing(1),

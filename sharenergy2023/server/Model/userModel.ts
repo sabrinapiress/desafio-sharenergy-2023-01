@@ -7,7 +7,6 @@ const User: Object = new mongoose.Schema({
     email: {type: String, require: true, unique: true},
     password: {type: String, require: true},
     quote: {type: String},
-    // token: {type: String}
 },
     {collection: 'user-data'}
 )

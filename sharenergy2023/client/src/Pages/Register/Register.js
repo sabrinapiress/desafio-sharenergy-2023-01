@@ -25,6 +25,10 @@ export default function Register() {
   const registerUser = async (event) => {
     try {
       event.preventDefault()
+
+      if (password.length < 6) {
+        alert("Senha precisa conter mais que 6 digitos")
+    }
       const res = await fetch("http://localhost:1337/register", {
         method: 'POST',
         headers: {

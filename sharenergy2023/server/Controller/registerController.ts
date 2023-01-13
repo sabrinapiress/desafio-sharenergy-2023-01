@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { Authenticator } from "../services/Authenticator";
 import { HashManager } from "../services/HashManager";
-const userService = require('../services/userServices')
+const userService = require('../database/userServices')
 
 const register = async (req: Request, res: Response) => {
     try {

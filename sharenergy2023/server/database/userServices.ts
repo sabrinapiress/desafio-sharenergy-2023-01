@@ -9,3 +9,5 @@ const update = async (id: string, token:string) => await User.updateOne(id, toke
 const deleted = async (id:string) => await User.findByIdAndDelete(id)
 
 module.exports = {create, findOne, update, deleted}
+
+export {};

@@ -1,4 +1,4 @@
-const userService = require('../services/userServices')
+const userService = require('../database/userServices')
 import { Request, Response } from "express";
 import { HashManager } from "../services/HashManager";
 import { Authenticator } from "../services/Authenticator";

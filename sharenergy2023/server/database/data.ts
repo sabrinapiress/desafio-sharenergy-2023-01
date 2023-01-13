@@ -17,3 +17,5 @@ const connectDatabase = async (): Promise<any> => {
 }
 
 module.exports = connectDatabase
+
+export {}

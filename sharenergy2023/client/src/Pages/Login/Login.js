@@ -36,7 +36,6 @@ export default function Login() {
         alert('Email ou senha não cadastrados!')
 
       }else {
-        console.log(data)
         localStorage.setItem('token', data.token)
         goToHome()
       }
