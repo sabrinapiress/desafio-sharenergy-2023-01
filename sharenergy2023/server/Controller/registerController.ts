@@ -1,10 +1,10 @@
+import { Request, Response } from "express";
+import { Authenticator } from "../services/Authenticator";
+import { HashManager } from "../services/HashManager";
 const userService = require('../services/userServices')
-var jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
 
-const register = async (req, res) => {
+const register = async (req: Request, res: Response) => {
     try {
-
         const { userName, firstName, lastName, email, password } = req.body
 
         if (!userName || !firstName || !lastName || !email || !password) {
@@ -19,21 +19,20 @@ const register = async (req, res) => {
             const checkEmail = await userService.findOne({ email: email })
 
             if (checkEmail) {
-                return res.status(400).json({ message: "Duplicate email" })
+                res.statusCode = 400
+                throw new Error('Email already exists')
             }
         }
 
-        const salt = bcrypt.genSaltSync(10)
+        if (password.length < 6) {
+            res.statusCode = 400
+            throw new Error("Password must have at least 6 characters")
+        }
 
-        const hashedPassword = bcrypt.hashSync(password, salt)
-
-        const token = jwt.sign({
-            name: userName,
-            email: email
-        }, 'secret123')
-
+        const cypherPassword = new HashManager().createHash(password)
+    
         const body = {
-            userName, firstName, lastName, email, password: hashedPassword, token
+            userName, firstName, lastName, email, password: cypherPassword
         }
         
         const user = await userService.create(body)
@@ -42,12 +41,18 @@ const register = async (req, res) => {
             return res.status(400).json({ message: 'Error creating User' })
         }
 
+        const token = new Authenticator().generateToken({
+            id: user._id,
+            email: user.email
+        })
+
+
         res.status(200).json({
             message: 'User created successfully',
             token: token
         })
         
-    } catch (error) {
+    } catch (error: any) {
         console.log(error)
         res.status(400).send(error.message)
     }

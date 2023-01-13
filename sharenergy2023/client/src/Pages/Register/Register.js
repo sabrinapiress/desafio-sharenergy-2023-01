@@ -39,7 +39,6 @@ export default function Register() {
         })
       })
       const data = await res.json()
-      // console.log(data)
       
       if (data.message.includes("Duplicate email")) {
         alert('E-mail já cadastrado!')

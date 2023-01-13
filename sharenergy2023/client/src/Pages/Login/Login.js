@@ -37,8 +37,8 @@ export default function Login() {
 
       }else {
         console.log(data)
-        // localStorage.setItem('token', data.token)
-        // goToHome()
+        localStorage.setItem('token', data.token)
+        goToHome()
       }
     } catch (err) {
       console.log(err)
