@@ -1,6 +1,6 @@
 <h1 id="top"> ⚡️ Projeto Sharenergy 2023/01: Desafio Tecnico </h1>
 
-![netflix-94](https://user-images.githubusercontent.com/99099328/208199504-575094a8-ca4f-4663-a3b9-e6b0cc2b57ac.png)
+![image](https://user-images.githubusercontent.com/99099328/212432523-9c0ff214-d107-406d-8bac-c62369034820.png)
 
 <br>
    
@@ -14,7 +14,6 @@
 
 <br>  
 
-<br>
   
 ## 🔗 Link Video: 
   <!-- - Doc. Postman [clicando aqui.](https://documenter.getpostman.com/view/22954681/2s8ZDR9SJT) -->
