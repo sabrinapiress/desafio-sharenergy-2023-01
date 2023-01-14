@@ -3,23 +3,22 @@
 ![image](https://user-images.githubusercontent.com/99099328/212432523-9c0ff214-d107-406d-8bac-c62369034820.png)
 
 <br>
-   
+
 ## ✍️ Layout:
   Layout criado utilizando biblioteca Material-UI
 
 <br>
-  
+
 ## 🔗 Link Documentação: 
   - Doc. Postman [clicando aqui.](https://documenter.getpostman.com/view/22954681/2s8ZDR9SJT)
 
-<br>  
+<br>
 
-  
 ## 🔗 Link Video: 
-  <!-- - Doc. Postman [clicando aqui.](https://documenter.getpostman.com/view/22954681/2s8ZDR9SJT) -->
+  - Doc. Postman [clicando aqui.](https://youtu.be/Aa1MQMmDSjE)
 
 <br>  
-  
+
 ## 💻 Imagens:
 
 Cadastro:
@@ -65,12 +64,25 @@ Modal de edição:
 Formulário de cadastro:
 ![image](https://user-images.githubusercontent.com/99099328/212429581-982a458b-f32f-4e09-b061-4320a45b2e8c.png)
 
-## <br>
 
-## 👨‍💻 Desenvolvedor:
-[<img src="https://avatars.githubusercontent.com/u/99099328?v=4" width=115><br><sub>Sabrina Caroline Pires da Silva</sub>](https://github.com/sabrinapiress) 
-  
-<br>
+## :dart: Instruções para rodar o projeto:
+
+## :dart: Na pasta ``/services``
+
+- Rode o comando ``npm install`` no seu terminal e instale as dependências.
+- Para iniciar o Banco de Dados rode ``npm run dev``. (A porta usada é a ``1337`` ==> ``http://localhost:1377/``)
+- Caso tudo ocarra bem você deve receber a seguinte mensagem no seu terminal:
+`` Server started on port 1337 ``
+`` MongoDB Atlas connected ``
+
+## :dart: Na pasta ``/client``
+
+- Rode o comando ``npm install`` no seu terminal e instale as dependências.
+- Para iniciar o Banco de Dados rode ``npm run start``. (A porta usada é a ``300`` ==> ``http://localhost:3000/``)
+- Caso tudo ocarra bem você deve receber a seguinte mensagem no seu terminal:
+``Compiled successfully!``
+
+## <br>
 
 ## :dart: Tecnologias utilizadas no FrontEnd:
 React
@@ -94,6 +106,12 @@ Mongoose
 Nodemon
 Node.js
 
+<br>
+
+## 👨‍💻 Desenvolvedor:
+[<img src="https://avatars.githubusercontent.com/u/99099328?v=4" width=115><br><sub>Sabrina Caroline Pires da Silva</sub>](https://github.com/sabrinapiress) 
+
+<br>
 
 <h2>
   <a href='#top'>Voltar para o topo.</a>
