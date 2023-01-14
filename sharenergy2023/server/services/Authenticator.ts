@@ -1,11 +1,10 @@
 import { sign, verify } from "jsonwebtoken"
-import { authenticationData } from "../types"
-var jwt = require('jsonwebtoken');
+import { authenticationData } from "../types";
 
 export class Authenticator {
 
-    generateToken = (payload: authenticationData): string => {
-        const token = jwt.sign({
+    generateToken = (payload: authenticationData ): string => {
+        const token = sign({
             name: payload.id,
             email: payload.email
         }, 'secret123')

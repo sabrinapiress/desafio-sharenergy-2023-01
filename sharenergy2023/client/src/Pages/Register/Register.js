@@ -28,32 +28,25 @@ export default function Register() {
 
       if (password.length < 6) {
         alert("Senha precisa conter mais que 6 digitos")
-    }
-      const res = await fetch("http://localhost:1337/register", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          userName,
-          firstName,
-          lastName,
-          email,
-          password
-        })
-      })
-      const data = await res.json()
-      
-      if (data.message.includes("Duplicate email")) {
-        alert('E-mail já cadastrado!')
 
-      } else if (data.message.includes("Invalid value")) {
-        alert('Insira um e-mail ou senha válido!')
-
-      }else if (data.message.includes("Submit all fields for registration")) {
-        alert('Preencha todos os campos!')
+      } else if (!email.includes("@")) {
+        alert('E-mail inválido!')
 
       } else {
+        const res = await fetch("http://localhost:1337/register", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            userName,
+            firstName,
+            lastName,
+            email,
+            password
+          })
+        })
+        const data = await res.json()
         alert(`Cadastro efetuado com sucesso. Bem vindo(a) ${firstName}!`)
         localStorage.setItem('token', data.token)
         goToHome()
@@ -61,12 +54,24 @@ export default function Register() {
 
     } catch (err) {
       console.log(err.message)
+      if (err.message.includes("Email already exists")) {
+        alert('E-mail já cadastrado!')
+
+      } else if (err.message.includes("Password must have at least 6 characters")) {
+        alert('Sua senha deve conter mais que 6 digitos!')
+
+      } else if (err.message.includes("Submit all fields for registration")) {
+        alert('Preencha todos os campos!')
+
+      } else if (err.message.includes("UserName")) {
+        alert('Nome de usuário já está em uso!')
+      }
     }
   }
 
   return (
     <div>
-      <Header btn1={'Cadastrar'} btn2={"Login"} route1={goToRegister} route2={goToLogin} firstName={firstName}/>
+      <Header btn1={'Cadastrar'} btn2={"Login"} route1={goToRegister} route2={goToLogin} firstName={firstName} />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -153,7 +158,7 @@ export default function Register() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link onClick={goToLogin} variant="body2">
                   Já tem uma conta? Login
                 </Link>
               </Grid>

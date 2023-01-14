@@ -1,4 +1,5 @@
-const crudController = require('../Controller/crudController')
+import crudController from '../Controller/crudController'
+
 const route = require('express').Router()
 
 const register = route.post('/', crudController.register)
@@ -11,6 +12,6 @@ const deleted = route.delete('/', crudController.deleted)
 
 const getAllUsers = route.patch('/', crudController.getAllUsers)
 
-module.exports = { register, findById, update, deleted, getAllUsers}
+const data  = module.exports = { register, findById, update, deleted, getAllUsers}
 
-export {};
+export default data;

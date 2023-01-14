@@ -1,8 +1,9 @@
-const userControllerLogin = require('../Controller/loginController')
+import userControllerLogin from '../Controller/loginController';
+
 const route = require('express').Router()
 
 const login = route.post('/',  userControllerLogin.login )
 
-module.exports = {login}
+const data = module.exports = {login}
 
-export {};
+export default data;

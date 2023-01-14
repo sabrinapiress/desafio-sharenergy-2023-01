@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { Authenticator } from "../services/Authenticator";
 import { HashManager } from "../services/HashManager";
-const userService = require('../database/userServices')
+import userService from '../database/userServices';
 
 const register = async (req: Request, res: Response) => {
     try {
@@ -21,6 +21,14 @@ const register = async (req: Request, res: Response) => {
             if (checkEmail) {
                 res.statusCode = 400
                 throw new Error('Email already exists')
+            }
+        }
+        
+        if (userName){
+            const checkUserName = await userService.findOne({ userName: userName })
+            if (checkUserName) {
+                res.statusCode = 400
+                throw new Error('UserName already exists')
             }
         }
 
@@ -58,4 +66,5 @@ const register = async (req: Request, res: Response) => {
     }
 }
 
-module.exports = { register }
+const userController = module.exports = { register }
+export default userController

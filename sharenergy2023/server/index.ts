@@ -1,10 +1,10 @@
-const userRoutes = require('./Routes/userRoutesRegister')
-const userRouterLogin = require('./Routes/userRouterLogin')
-const express = require('express')
+import userRoutes from './Routes/userRoutesRegister'
+import userRouterLogin from './Routes/userRouterLogin'
+import express from 'express'
 const app = express()
-const cors = require('cors')
-const connectDatabase = require('./database/data')
-const crudRouter  = require('./Routes/crudRouter')
+import cors from 'cors'
+import connectDatabase from './database/data'
+import crudRouter from './Routes/crudRouter'
 
 app.use(express.json())
 app.use(cors())
@@ -28,5 +28,3 @@ connectDatabase()
 app.listen(1337, () => {
     console.log("Server started on port 1337")
 })
-
-export {};

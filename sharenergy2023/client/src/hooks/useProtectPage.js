@@ -1,5 +1,4 @@
 import { useLayoutEffect } from "react";
-// import jwt from 'jsonwebtoken'
 import jwt_decode from 'jwt-decode'
 
 export const useProtectedPage = () => {

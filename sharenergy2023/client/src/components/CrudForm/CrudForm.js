@@ -69,8 +69,9 @@ export default function CrudForm({ title, handleClose }) {
           })
         })
         await res.json();
-        alert(`Usuário Editado!`)
+        console.log(res)
         handleClose()
+        
       } else {
         alert(`Preencha todos os campos!`)
       }

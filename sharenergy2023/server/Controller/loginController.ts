@@ -1,4 +1,4 @@
-const userService = require('../database/userServices')
+import userService from '../database/userServices';
 import { Request, Response } from "express";
 import { HashManager } from "../services/HashManager";
 import { Authenticator } from "../services/Authenticator";
@@ -73,4 +73,5 @@ const login = async (req: Request, res: Response): Promise<any> => {
     }
 }
 
-module.exports = { login }
+const loginController = module.exports = { login }
+export default loginController

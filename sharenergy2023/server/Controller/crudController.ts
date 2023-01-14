@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import { Authenticator } from "../services/Authenticator"
-const crudServices = require('../database/crudServices')
-const userService = require('../database/userServices')
+import crudServices from '../database/crudServices'
+import userService from '../database/userServices'
 
 const register = async (req: Request, res: Response) => {
     try {
@@ -21,22 +21,6 @@ const register = async (req: Request, res: Response) => {
             res.status(406).json({ message: "Invalid values" })
         }
 
-        // if (email) {
-        //     const user = await crudServices.findOne({ email: email })
-        //     if (user) {
-        //         return res.status(406).json({ message: "Email already exists" })
-        //     }
-        // } else if (cellphone) {
-        //     const user = await crudServices.findOne({ cellphone: cellphone })
-        //     if (user) {
-        //         return res.status(406).json({ message: "Cellphone already exists" })
-        //     }
-        // } else if (cpf) {
-        //     const user = await crudServices.findOne({ cpf: cpf })
-        //     if (user) {
-        //         return res.status(406).json({ message: "CPF already exists" })
-        //     }
-        // }
         const authenticator = new Authenticator()
         const authenticationData = authenticator.getTokenData(token)
 
@@ -109,7 +93,7 @@ const update = async (req: Request, res: Response) => {
 
         const { name, email, address, cellphone, cpf, } = req.body
 
-        const _id = req.query.id
+        const _id: any = req.query.id
 
         const token = req.headers['authorization'] as string
 
@@ -224,4 +208,6 @@ const getAllUsers = async (req: Request, res: Response) => {
     }
 }
 
-module.exports = { register, findById, update, deleted, getAllUsers }
+const crudController = module.exports = { register, findById, update, deleted, getAllUsers }
+
+export default crudController

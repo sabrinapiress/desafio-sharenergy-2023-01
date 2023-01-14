@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
-const User: any = new mongoose.Schema({
+const User:any = new mongoose.Schema({
     name: {type: String, require: true},
     cpf: {type: String, require: true, unique: true},
     email: {type: String, require: true, unique: true},
@@ -12,4 +12,6 @@ const User: any = new mongoose.Schema({
 
 const model = mongoose.model('UserCrud', User)
 
-module.exports = model 
+const Crud = module.exports = model 
+
+export default Crud

@@ -1,8 +1,9 @@
-const userController = require('../Controller/registerController')
+import userController from '../Controller/registerController';
+
 const route = require('express').Router()
 
 const register = route.post('/', userController.register)
 
-module.exports = { register}
+const data = module.exports = { register}
 
-export {};
+export default data;

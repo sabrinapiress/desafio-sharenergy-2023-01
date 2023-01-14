@@ -1,4 +1,4 @@
-const Crud = require('../Model/crudModel')
+import Crud from '../Model/crudModel'
 
 const findOne = (body:object) => Crud.findOne(body)
 
@@ -12,6 +12,6 @@ const findById = async (body:object) => await Crud.findById(body)
 
 const getAllUsers = async () => await Crud.find()
 
-module.exports = {create, update, deleted, findOne, findById, getAllUsers}
+const data = module.exports = {create, update, deleted, findOne, findById, getAllUsers}
 
-export {};
+export default data

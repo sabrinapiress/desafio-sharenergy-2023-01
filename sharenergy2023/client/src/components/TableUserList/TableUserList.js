@@ -228,7 +228,6 @@ export default function CustomPaginationActionsTable() {
                                         ? filterCode?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                         : filterCode
                                     ).map((row) =>
-                                        // <BodyTable row={row} />
                                         <TableRow key={row.name}>
                                             <TableCell component="th" scope="row">
                                                 <p style={{ fontWeight: 'lighter' }}>{row.name}</p>
