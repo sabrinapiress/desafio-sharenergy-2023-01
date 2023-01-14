@@ -15,7 +15,7 @@
 <br>
 
 ## 🔗 Link Video: 
-  - Doc. Postman [clicando aqui.](https://youtu.be/Aa1MQMmDSjE)
+  - Doc. Video [clicando aqui.](https://youtu.be/Aa1MQMmDSjE)
 
 <br>  
 
